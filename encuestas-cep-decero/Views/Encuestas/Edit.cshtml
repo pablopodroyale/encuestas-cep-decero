@@ -1,0 +1,106 @@
+﻿@model encuestas_cep_decero.Models.Encuesta
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Encuesta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EncuestaID" />
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dni_Libreta" class="control-label"></label>
+                <input asp-for="Dni_Libreta" class="form-control" />
+                <span asp-validation-for="Dni_Libreta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Domicilio" class="control-label"></label>
+                <input asp-for="Domicilio" class="form-control" />
+                <span asp-validation-for="Domicilio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Localidad" class="control-label"></label>
+                <input asp-for="Localidad" class="form-control" />
+                <span asp-validation-for="Localidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nombre" class="control-label"></label>
+                <input asp-for="nombre" class="form-control" />
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pregunta_Aumento_Transporte" class="control-label"></label>
+                <input asp-for="Pregunta_Aumento_Transporte" class="form-control" />
+                <span asp-validation-for="Pregunta_Aumento_Transporte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pregunta_Boleto_Edu" class="control-label"></label>
+                <input asp-for="Pregunta_Boleto_Edu" class="form-control" />
+                <span asp-validation-for="Pregunta_Boleto_Edu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pregunta_Beca_Transporte" class="control-label"></label>
+                <input asp-for="Pregunta_Beca_Transporte" class="form-control" />
+                <span asp-validation-for="Pregunta_Beca_Transporte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pregunta_Politica_Permanencia" class="control-label"></label>
+                <input asp-for="Pregunta_Politica_Permanencia" class="form-control" />
+                <span asp-validation-for="Pregunta_Politica_Permanencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pregunta_Politica_Iniciativas" class="control-label"></label>
+                <input asp-for="Pregunta_Politica_Iniciativas" class="form-control" />
+                <span asp-validation-for="Pregunta_Politica_Iniciativas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pregunta_Comentarios" class="control-label"></label>
+                <input asp-for="Pregunta_Comentarios" class="form-control" />
+                <span asp-validation-for="Pregunta_Comentarios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

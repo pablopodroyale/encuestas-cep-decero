@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Encuestas_cep_decero.Data;
 
 namespace encuestas_cep_decero
 {
@@ -22,10 +24,13 @@ namespace encuestas_cep_decero
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddDbContext<EncuestaContexto>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("EncuestaContexto")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, EncuestaContexto contexto)
         {
             if (env.IsDevelopment())
             {
@@ -45,6 +50,7 @@ namespace encuestas_cep_decero
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            DbInitializer.Initialize(contexto);
         }
     }
 }
