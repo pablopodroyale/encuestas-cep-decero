@@ -54,7 +54,7 @@ namespace Encuestas_cep_decero.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EncuestaID,Nombre,Apellido,Dni_Libreta,Domicilio,Localidad,nombre,Telefono,Email,Pregunta_Aumento_Transporte,Pregunta_Boleto_Edu,Pregunta_Beca_Transporte,Pregunta_Politica_Permanencia,Pregunta_Politica_Iniciativas,Pregunta_Comentarios,Estado")] Encuesta encuesta)
+        public async Task<IActionResult> Create([Bind("EncuestaID,Nombre,Apellido,Dni_Libreta,Domicilio,Localidad,Telefono,Email,Pregunta_Aumento_Transporte,Pregunta_Boleto_Edu,Pregunta_Beca_Transporte,Pregunta_Politica_Permanencia,Pregunta_Politica_Iniciativas,Pregunta_Comentarios,Estado")] Encuesta encuesta)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Encuestas_cep_decero.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EncuestaID,Nombre,Apellido,Dni_Libreta,Domicilio,Localidad,nombre,Telefono,Email,Pregunta_Aumento_Transporte,Pregunta_Boleto_Edu,Pregunta_Beca_Transporte,Pregunta_Politica_Permanencia,Pregunta_Politica_Iniciativas,Pregunta_Comentarios,Estado")] Encuesta encuesta)
+        public async Task<IActionResult> Edit(int id, [Bind("EncuestaID,Nombre,Apellido,Dni_Libreta,Domicilio,Localidad,Telefono,Email,Pregunta_Aumento_Transporte,Pregunta_Boleto_Edu,Pregunta_Beca_Transporte,Pregunta_Politica_Permanencia,Pregunta_Politica_Iniciativas,Pregunta_Comentarios,Estado")] Encuesta encuesta)
         {
             if (id != encuesta.EncuestaID)
             {
